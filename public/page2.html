@@ -1,0 +1,80 @@
+﻿ #set($inputRoot = $input.path('$')) #if($inputRoot.result.size()==0)
+<div class="no-actress-message">
+    <p class="no-actress-message-explanation">
+        似ているAV女優が見つかりませんでした。<br /> 下記をお試しください。
+    </p>
+
+    <ul class="no-actress-message-list">
+        <li>女性の写真にする</li>
+        <li>写りの良い写真にする</li>
+        <li>１人で写っている写真にする</li>
+    </ul>
+
+</div>
+
+<!-- reload button -->
+<div class="reload-btn-area">
+    <input type="button" value="他の子を調べる" id="reload" class="btn-square reload-btn" onclick="location.href='https://app.your-porno-actress.com'">
+</div>
+
+
+#else
+
+<!-- result shows -->
+<div class="result-container">
+    #set($jpeg = ".jpg") #foreach($elem in $inputRoot.result) #if($elem.Face.ExternalImageId!="")
+
+    <!-- result item wrapper -->
+    <div class="result-vertical-container">
+
+        <div class="result-flex-item-wrapper">
+
+            <!-- result jav actress image -->
+            <div class="result-flex-item">
+                <img class="result-flex-item-image" src="/actress/$elem.Face.ExternalImageId$jpeg" alt="here is result jav image">
+            </div>
+
+            <!-- result details -->
+            <div class="result-flex-item">
+                <p class="result-matchig-point-text">似ているAV女優</p>
+                <p class="result-actress-text">$elem.Name</p>
+                <p class="result-matchig-point-text">マッチ度: $elem.Similarity %</p>
+            </div>
+
+            <!-- embetting movie frame -->
+            <div class="result-flex-item">
+                #if($elem.TagUrlElement!="")
+                <div class="iframe-wrapper">
+                    <iframe class="iframe-setting" src="https://www.pornhub.com/embed/$elem.TagUrlElement" frameborder="0" 　scrolling="no" allowfullscreen></iframe>
+                </div>
+                #end
+            </div>
+
+        </div>
+        <!-- end result-flex-item-wrapper-->
+    </div>
+    <!-- end result-vertical-container -->
+
+    #end #end
+</div>
+
+<!-- score details -->
+<div class="score-detail">
+    <div class="score-table">
+        <h3 class="score-explanation-title">
+            マッチ度
+        </h3>
+
+        <p class="score-explanation">
+            90点以上: もしかして本人かも<br /> 80～89点: AVデビューすすめちゃおう<br /> 70～79点: 1回整形したらAV女優になれるかも<br /> 70点以下: 来世に期待
+        </p>
+    </div>
+</div>
+
+<!-- reload button -->
+<div class="reload-btn-area">
+    <input type="button" value="他の子を調べる" id="reload" class="btn-square reload-btn" onclick="location.href='https://app.your-porno-actress.com'">
+</div>
+
+#end
+</div>

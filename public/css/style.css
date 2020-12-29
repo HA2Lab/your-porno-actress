@@ -1,0 +1,556 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Noto Sans JP";
+    line-height: 1.7;
+}
+
+
+/* home-content-wrapper*/
+
+.home-content-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.home-image {
+    width: 100%;
+}
+
+
+/* page title*/
+
+.page-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    ;
+    font-weight: bold;
+    color: hotpink;
+    /* -webkit-text-stroke: 1px #FFF;
+    text-stroke: 1px #FFF; */
+    text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px -1px 0 #FFF, 0px 1px 0 #FFF, 0-1px 0 #FFF, -1px 0 0 #FFF, 1px 0 0 #FFF;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    /*余計な隙間を除く*/
+    padding: 0;
+    /*余計な隙間を除く*/
+}
+
+.page-title h1 {
+    font-size: calc(1.1rem + ((1vw - 0.01rem) * 2.8));
+    /* 可変*/
+}
+
+.page-title h2 {
+    line-height: 0.5;
+    font-size: calc(0.4rem + ((1vw - 0.02rem) * 2.2));
+    /* 可変*/
+}
+
+.gnav {
+    position: absolute;
+    top: 0%;
+    left: 82%;
+    font-size: calc(0.3rem + ((1vw - 0.02rem) * 1.7));
+    align-content: right;
+}
+
+.gnav ul li {
+    display: inline;
+}
+
+.gnav a {
+    text-decoration: none;
+    color: pink;
+}
+
+.gnav a:hover {
+    text-decoration: underline;
+    color: hotpink;
+}
+
+.slash {
+    color: darkgray;
+}
+
+#current {
+    color: hotpink;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: space-around;
+    /* margin-bottom: 10px; */
+}
+
+.img-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#preview {
+    margin-top: 5px;
+}
+
+.cropper-container cropper-bg {
+    /* width: 60%  !important;
+    height: auto  !important; */
+    /* top: 0px !important;
+    left: 0px !important; */
+}
+
+.cropper-canvas {
+    width: auto !important;
+    height: auto !important;
+    /* top: 0px !important;
+    left: 0px !important; */
+}
+
+.cropper-drag-box cropper-modal cropper-crop {
+    /* top: 0px !important;
+    left: 0px !important; */
+}
+
+.cropper-crop-box {
+    /* width: 282.937px !important;
+    height: 282.937px !important;
+    left: 300px !important;
+    top: 130px !important; */
+    min-width: 30px;
+    min-height: 30px;
+}
+
+#after-trimming-box {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.after-trimming-text {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+#preview2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.btn-square {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-family: "Noto Sans JP";
+    text-decoration: none;
+    background: hotpink;
+    /*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px pink;
+    border-radius: 10px;
+}
+
+.btn-square:hover {
+    background: #fd7dbd;
+}
+
+.btn-square:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
+    /*線を消す*/
+}
+
+.cropper-container {
+    height: auto;
+}
+
+.cropper-bg {
+    height: auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.explanation {
+    margin-top: 15px;
+    text-align: center;
+    font-size: calc(0.4rem + ((1vw - 0.05rem) * 2.6));
+    /* 可変*/
+    font-family: "Noto Sans JP";
+    font-weight: bold;
+    color: hotpink;
+}
+
+.explanation-flex-item {
+    text-align: center;
+    font-size: calc(0.15rem + ((1vw - 0.14rem) * 1.4));
+    /* 可変*/
+    font-family: "Noto Sans JP";
+    /* font-size: 1.3rem; */
+    color: gray;
+    width: 30%;
+}
+
+.circle {
+    display: inline-block;
+    background: hotpink;
+    color: white;
+    border-radius: 50%;
+    font-size: calc(0.3rem + ((1vw - 0.15rem) * 1.4));
+    /* 可変*/
+    text-align: center;
+    height: calc(16px + (1vw - 0.15rem)*1.1);
+    width: calc(16px + (1vw - 0.15rem)*1.1);
+    line-height: calc(16px + (1vw - 0.15rem)*1.0);
+}
+
+.explanation-text {
+    display: inline;
+    font-size: calc(0.15rem + ((1vw - 0.14rem) * 1.4));
+    /* 可変*/
+    font-weight: normal;
+}
+
+.flex-image {
+    /* margin-top: 10px; */
+    width: 100%;
+}
+
+.example-usage {
+    margin-top: 15px;
+}
+
+.example-text {
+    text-align: center;
+    color: gray;
+    font-weight: normal;
+    font-size: calc(0.15rem + ((1vw - 0.14rem) * 1.4));
+    /* 可変*/
+}
+
+.example-text-last {
+    text-align: center;
+    color: gray;
+    font-weight: normal;
+    font-size: calc(0.2rem + ((1vw - 0.14rem) * 1.7));
+    /* 可変*/
+}
+
+.text-pink {
+    color: hotpink;
+    font-weight: bold;
+}
+
+#loading {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: hotpink;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+#loading .loadingMsg {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 140px;
+    background: url("data:image/gif;base64,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") center center no-repeat;
+}
+
+#content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.result-vertical-container {
+    border-top: 2px hotpink solid;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.result-flex-item-wrapper {
+    margin: 10px;
+}
+
+.result-flex-item {
+    text-align: center;
+    font-size: calc(0.2rem + ((1vw - 0.15rem) * 1.2));
+    /* 可変*/
+    font-family: "Noto Sans JP";
+    font-style: normal;
+    /* font-size: 1.3rem; */
+    color: gray;
+    width: 100%;
+    line-height: 1.5em;
+}
+
+.result-flex-item-image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.result-actress-text {
+    text-align: center;
+    color: hotpink;
+    font-size: calc(1.2rem + ((1.0vw - 0.15rem) * 0.9));
+    line-height: 1.3em;
+}
+
+.result-matchig-point-text {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* depend on aspect ratio*/
+    margin-bottom: 10px;
+}
+
+.iframe-setting {
+    /* iframe doesn't support auto */
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.no-actress-message {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.no-actress-message-explanation {
+    font-size: 1.4rem;
+    font-family: "Noto Sans JP";
+    color: gray;
+    border-bottom: 10px;
+}
+
+.no-actress-message-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    font-size: 1.3rem;
+    font-family: "Noto Sans JP";
+    color: gray;
+    border-bottom: 10px;
+}
+
+.reload-btn-area {
+    border-top: 2px hotpink solid;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.reload-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score-detail {
+    border-top: 2px hotpink solid;
+    width: 100%;
+    padding: 10px;
+}
+
+.score-table {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.score-explanation-title {
+    padding-left: 5px;
+    font-size: 1.3rem;
+    font-family: "Noto Sans JP";
+    color: hotpink;
+}
+
+.score-explanation {
+    padding-left: 20px;
+    text-align: left;
+    color: gray;
+    font-size: 1.0rem;
+    font-family: "Noto Sans JP";
+}
+
+.share-buttons {
+    margin-top: 15px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+/* footer*/
+
+footer {
+    margin-top: 15px;
+    width: 100%;
+    height: 30px;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    /*下に固定*/
+    background-color: hotpink;
+}
+
+
+/* for mobile device
+------------------------------- */
+
+@media (max-width: 800px) {
+    .page-title {
+        /* font-size: 1.1rem; */
+        font-size: calc(0.4rem + ((1vw - 0.05rem) * 1.7));
+        /* 可変*/
+    }
+    .page-title h1 {
+        font-size: calc(0.4rem + ((16vw) * 0.23));
+    }
+    .form-group {
+        display: block;
+    }
+    .control-label {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-control {
+        display: block;
+    }
+    .explanation {
+        font-size: calc(0.4rem + ((16vw) * 0.23));
+    }
+    .explanation-text {
+        display: inline;
+        font-size: calc(0.11em + ((16vw) * 0.23));
+        /* 可変*/
+        font-weight: normal;
+    }
+    .circle {
+        margin-left: 5%;
+        font-size: calc(0.3rem + ((16vw) * 0.235));
+        height: calc(0.7rem + ((16vw) * 0.235));
+        width: calc(0.7rem + ((16vw) * 0.235));
+        line-height: calc(0.7rem + ((16vw) * 0.23) - 0.1rem);
+    }
+    .example-text {
+        font-size: calc(0.3rem + ((15vw) * 0.2));
+    }
+    .example-text-last {
+        font-size: calc(0.1em + ((15vw) * 0.23));
+        /* 可変*/
+    }
+    /* HOME */
+    .home-content {
+        margin-top: 20%;
+    }
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+    .flex-image {
+        padding-top: 5px;
+    }
+    .img-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .preview-container {
+        flex-wrap: wrap;
+    }
+    .cropper-container {
+        /* height: 500px !important; */
+    }
+    .cropper-bg {
+        /*it makes change of height of cropper image*/
+        /* height: 500px !important; */
+    }
+    .result-vertical-container {
+        width: 100%;
+    }
+    .result-flex-item {
+        font-size: 1.0rem;
+    }
+    .explanation-flex-item {
+        /* margin-top: 10px; */
+        text-align: left;
+        font-size: calc(0.1rem + ((16vw) * 0.235));
+        /* font-size: 1.0rem; */
+        width: 100%;
+    }
+    .no-actress-message-explanation {
+        font-size: 1.2rem;
+    }
+    .no-actress-message-list {
+        font-size: 1.1rem;
+    }
+    .score-explanation {
+        font-size: calc(0.1rem + ((16vw) * 0.23));
+        ;
+    }
+    .share-buttons {
+        width: 80%;
+    }
+}
