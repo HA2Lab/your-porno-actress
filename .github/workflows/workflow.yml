@@ -20,5 +20,3 @@ jobs:
         working-directory: public
         run: aws s3 sync . s3://av-sommlier --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "README.md"
 
-
-
