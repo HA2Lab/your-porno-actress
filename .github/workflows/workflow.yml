@@ -1,10 +1,8 @@
 name: s3-deploy-sample
 on:
-  pull_request:
+  push:
     branches:
       - master
-#    types: [opened, synchronize, closed] #他のjobがある想定でこの設定にしている
-
 jobs:
   UploadStaticFiles:
     name: Upload static files
