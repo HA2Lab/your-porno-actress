@@ -20,5 +20,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_DEV_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - name: S3 sync
-        working-directory: static-files
+        working-directory: public
         run: aws s3 sync . s3://av-sommlier --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "README.md"
