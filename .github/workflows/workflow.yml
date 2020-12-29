@@ -21,3 +21,4 @@ jobs:
        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_DEV_SECRET_ACCESS_KEY }}
        AWS_REGION: 'ap-northeast-1'   # S3のリージョンを指定します
        SOURCE_DIR: ''      # S3のデプロイ対象のディレクトリを指定します  
+
