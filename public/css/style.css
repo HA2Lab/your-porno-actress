@@ -29,7 +29,6 @@ body {
 
 .page-title {
     font-family: 'Noto Sans JP', sans-serif;
-    ;
     font-weight: bold;
     color: hotpink;
     /* -webkit-text-stroke: 1px #FFF;
@@ -38,26 +37,28 @@ body {
     text-align: center;
     align-content: center;
     position: absolute;
-    top: 45%;
+    top: 55%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     margin: 0;
-    /*余計な隙間を除く*/
     padding: 0;
-    /*余計な隙間を除く*/
+    width: auto;
 }
 
 .page-title h1 {
     font-size: calc(1.1rem + ((1vw - 0.01rem) * 2.8));
-    /* 可変*/
 }
 
 .page-title h2 {
     line-height: 0.5;
     font-size: calc(0.4rem + ((1vw - 0.02rem) * 2.2));
-    /* 可変*/
+}
+
+.page-explanation {
+    margin-top: 15%;
+    font-size: calc(0.2rem + ((1vw - 0.03rem) * 1.8));
 }
 
 .gnav {
