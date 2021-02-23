@@ -461,18 +461,37 @@ body {
     align-items: center;
 }
 
+.twitter-share-button {
+    font-size: calc(0.8rem + ((4vw) * 0.2)) !important;
+}
+
 
 /* footer*/
 
 footer {
     margin-top: 15px;
     width: 100%;
-    height: 30px;
+    height: 50px;
+    padding: auto;
     color: white;
+    vertical-align: middle;
     text-align: center;
     bottom: 0;
     /*下に固定*/
     background-color: hotpink;
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: calc(0.8rem + ((4vw) * 0.2));
 }
 
 
