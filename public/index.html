@@ -108,6 +108,10 @@
             </div>
 
             <input type="button" value="画像をトリミングして送信" id="btnSubmit" class="btn-square">
+
+            <div class="triming-image" id="triming-image">
+                <!-- /triming image display -->
+            </div>
         </div>
 
     </div>
@@ -312,7 +316,7 @@
             var imageData = $('#preview').cropper('getCroppedCanvas').toDataURL('image/jpeg');
 
             if (document.getElementById('after-trimming-box') == null) {
-                $('#innput-img-container').append('<div id="after-trimming-box"><p class="after-trimming-text">トリミング画像</p><img id="preview2"></div>')
+                $('#triming-image').append('<div id="after-trimming-box"><p class="after-trimming-text">トリミング画像</p><img id="preview2"></div>')
             }
 
 
