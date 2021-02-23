@@ -99,18 +99,21 @@
 
         <div class="form-group">
             <label class="control-label" for="selectImage">調べたい子の写真をアップロード</label>
-            <input type="file" name="uploadFileNameAttr" accept="image/*" id="selectImage" class="form-control" size="70" placeholder="no file chosen, please select" required>
+            <input type="file" name="uploadFileNameAttr" accept="image/*" id="selectImage" class="form-control" size="80" placeholder="no file chosen, please select" required>
 
             <div class="preview-container">
-                <div class="img-container" id="innput-img-container">
-                    <!-- adding preview image -->
+                <div class="image-inut-container">
+                    <div class="img-container" id="innput-img-container">
+                        <!-- adding preview image -->
+                    </div>
+
+                    <input type="button" value="画像をトリミングして送信" id="btnSubmit" class="btn-square">
                 </div>
-            </div>
 
-            <input type="button" value="画像をトリミングして送信" id="btnSubmit" class="btn-square">
+                <div class="triming-image" id="triming-image">
+                    <!-- /triming image display -->
+                </div>
 
-            <div class="triming-image" id="triming-image">
-                <!-- /triming image display -->
             </div>
         </div>
 
