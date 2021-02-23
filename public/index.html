@@ -100,15 +100,16 @@
         <div class="form-group">
             <label class="control-label" for="selectImage">調べたい子の写真をアップロード</label>
             <input type="file" name="uploadFileNameAttr" accept="image/*" id="selectImage" class="form-control" size="70" placeholder="no file chosen, please select" required>
+
+            <div class="preview-container">
+                <div class="img-container" id="innput-img-container">
+                    <!-- adding preview image -->
+                </div>
+            </div>
+
             <input type="button" value="画像をトリミングして送信" id="btnSubmit" class="btn-square">
         </div>
 
-    </div>
-
-    <div class="preview-container">
-        <div class="img-container" id="innput-img-container">
-            <!-- adding preview image -->
-        </div>
     </div>
 
     <!-- how to use explanation -->
