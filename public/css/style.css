@@ -116,10 +116,14 @@ body {
     /* margin-bottom: 10px; */
 }
 
-.img-container {
-    display: flex;
+.image-inut-container {
     margin-left: auto;
     margin-right: auto;
+}
+
+.img-container {
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 #preview {
