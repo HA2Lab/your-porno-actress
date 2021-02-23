@@ -102,6 +102,12 @@ body {
 
 .control-label {
     font-size: calc(1.0rem + ((5vw) * 0.2));
+    margin: 1%;
+}
+
+.form-control {
+    margin: 2%;
+    font-size: calc(1.0rem + ((5vw) * 0.2));
 }
 
 .preview-container {
@@ -498,6 +504,7 @@ footer {
     }
     .form-control {
         display: block;
+        margin: 2%;
     }
     .explanation {
         font-size: calc(0.4rem + ((16vw) * 0.23));
