@@ -43,8 +43,8 @@
     <!-- CSS -->
     <!-- reset CSS -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- favicon -->
     <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
@@ -217,9 +217,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- cropper css load -->
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
     <!-- jQuery load -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js" defer></script>
     <!-- cropper load -->
 
     <script>
