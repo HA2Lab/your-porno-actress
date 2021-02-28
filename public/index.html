@@ -22,9 +22,9 @@
     <meta charset="UTF-8">
     <title>似ているAV女優: Your Porno Actress</title>
     <!-- for multi language -->
-    <link rel="alternate" hreflang="en" href="https://app.your-porno-actress.com/" />
+    <link rel="alternate" hreflang="en" href="https://app.your-porno-actress.com/index-en.html" />
     <link rel="alternate" hreflang="ja" href="https://app.your-porno-actress.com/" />
-    <link rel="alternate" hreflang="ch" href="https://app.your-porno-actress.com/" />
+    <link rel="alternate" hreflang="ch" href="https://app.your-porno-actress.com/index-ch.html" />
     <link rel="alternate" hreflang="x-default" href="https://app.your-porno-actress.com/" />
 
     <!-- meta setting -->
@@ -215,15 +215,14 @@
         </div>
     </footer>
 
-
     <!-- CDN -->
     <!-- CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css " rel="stylesheet " type="text/css " media="all " defer/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- cropper css load -->
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js " defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- jQuery load -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js " defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
     <!-- cropper load -->
 
     <script>
@@ -231,16 +230,16 @@
         $(document).on('change', '#selectImage', function(e) {
 
             if (document.getElementById('preview') == null) {
-                var imgContainer = document.getElementById("innput-img-container ");
-                var imagepreview = document.createElement("img ");
-                imagepreview.id = "preview ";
+                var imgContainer = document.getElementById("innput-img-container");
+                var imagepreview = document.createElement("img");
+                imagepreview.id = "preview";
                 imgContainer.appendChild(imagepreview);
             } else {
                 // delete existing image and rebuild preview
-                var imgContainer = document.getElementById("innput-img-container ")
+                var imgContainer = document.getElementById("innput-img-container")
                 imgContainer.textContent = null;
-                var imagepreview = document.createElement("img ");
-                imagepreview.id = "preview ";
+                var imagepreview = document.createElement("img");
+                imagepreview.id = "preview";
                 imgContainer.appendChild(imagepreview);
             }
 
@@ -273,19 +272,19 @@
                     canvas.width = width;
                     canvas.height = height; //ここでトリミング。width,heightと同サイズならjpeg圧縮のみされる
                     ctx.drawImage(img, 0, 0, width, height);
-                    resized_img_url = canvas.toDataURL("image/jpeg ");
+                    resized_img_url = canvas.toDataURL("image/jpeg");
 
                     var window_width = window.innerWidth;
                     var preview_width = parseInt(window_width * 0.8);
                     var preview_height = parseInt(preview_width * aspect);
 
                     if (height > (preview_height)) {
-                        $("#preview ").height(preview_height);
+                        $("#preview").height(preview_height);
                     } else {
-                        // $("#preview ").width(preview_width).height(preview_height);
+                        // $("#preview").width(preview_width).height(preview_height);
                     }
 
-                    $("#preview ").attr('src', resized_img_url);
+                    $("#preview").attr('src', resized_img_url);
                     // debugger
 
                     $('#preview').cropper('destroy'); //https://github.com/fengyuanchen/cropper/issues/722
@@ -308,17 +307,17 @@
             //https://github.com/fengyuanchen/cropper/issues/359
 
             // make buttons disable
-            $("#btnSubmit ").prop("disabled ", true);
-            $("#btnSubmit ").css("background-color ", "Gray ");
+            $("#btnSubmit").prop("disabled", true);
+            $("#btnSubmit").css("background-color", "Gray");
 
             // 処理前に Loading 画像を表示
-            dispLoading("loading... ");
+            dispLoading("loading...");
 
             var display_canvas = $('#preview').cropper('getCroppedCanvas');
             if (display_canvas.toDataURL === undefined) {
                 alert('select an image!')
-                $("#btnSubmit ").prop("disabled ", false);
-                $("#btnSubmit ").css("background-color ", "hotpink ");
+                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").css("background-color", "hotpink");
 
                 // Loading 画像を消す
                 removeLoading();
@@ -330,7 +329,7 @@
             var imageData = $('#preview').cropper('getCroppedCanvas').toDataURL('image/jpeg');
 
             if (document.getElementById('after-trimming-box') == null) {
-                $('#triming-image').append('<div id="after-trimming-box "><p class="after-trimming-text ">トリミング画像</p><img id="preview2 "></div>')
+                $('#innput-img-container').append('<div id="after-trimming-box"><p class="after-trimming-text">トリミング画像</p><img id="preview2"></div>')
             }
 
 
@@ -362,17 +361,17 @@
                 cache: false,
                 success: function(data) {
                     $('#content').html(data)
-                    $("#btnSubmit ").prop("disabled ", false);
-                    $("#btnSubmit ").css("background-color ", "hotpink ");
+                    $("#btnSubmit").prop("disabled", false);
+                    $("#btnSubmit").css("background-color", "hotpink");
 
-                    // showMsg("succeed ");
+                    // showMsg("succeed");
                 },
                 error: function(xhr, status, error) {
                     alert('sorry, server error.Please try with lower image. \n少し小さい画像ファイルで試してみてください')
-                    $("#btnSubmit ").prop("disabled ", false);
-                    $("#btnSubmit ").css("background-color ", "hotpink ");
+                    $("#btnSubmit").prop("disabled", false);
+                    $("#btnSubmit").css("background-color", "hotpink");
 
-                    // showMsg("failed ");
+                    // showMsg("failed");
                 },
                 complete: function(data) {
                     // Loding 画像を消す
@@ -403,17 +402,42 @@
         function dispLoading(msg) {
             // 引数なし（メッセージなし）を許容
             if (msg == undefined) {
-                msg = " ";
+                msg = "";
             }
             // 画面表示メッセージ
-            var dispMsg = "<div class='loadingMsg'>" + msg + "</div>"; // ローディング画像が表示されていない場合のみ出力 if ($("#loading").length == 0) { $("body").append("
-            <
-            div id = 'loading' > " + dispMsg + " < /div>"); } } / * -- -- -- -- -- -- -- -- -- -- -- -- -- -- --Loading イメージ削除関数-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- * / function removeLoading() { $("#loading").remove(); } / * -- -- -- -- -- -- -- -- -- -- -- -- -- -- --Scrolling Function-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-                *
-                / function scrolling_to_result() { / / scroll to result(iOs support ver with jQuerry) // 移動先を0px調整する。0を30にすると30px下にずらすことができる。 var adjust = 0; // スクロールの速度（ミリ秒） var speed = 400; // アンカーの値取得 リンク先（content）を取得して、hrefという変数に代入 var href = $(this).attr("content");
-                // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入 var target = $(href == "#" || href == "" ? 'html' : href); // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入 var position = target.offset().top + adjust; // スムーススクロール linear（等速） or swing（変速） $('body,html').animate({
-            scrollTop: position
-        }, speed, 'swing');
+            var dispMsg = "<div class='loadingMsg'>" + msg + "</div>";
+            // ローディング画像が表示されていない場合のみ出力
+            if ($("#loading").length == 0) {
+                $("body").append("<div id='loading'>" + dispMsg + "</div>");
+            }
+        }
+
+        /* ------------------------------
+        Loading イメージ削除関数
+        ------------------------------ */
+        function removeLoading() {
+            $("#loading").remove();
+        }
+
+        /* ------------------------------
+        Scrolling Function
+        ------------------------------ */
+        function scrolling_to_result() {
+            // scroll to result (iOs support ver with jQuerry)
+            // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
+            var adjust = 0;
+            // スクロールの速度（ミリ秒）
+            var speed = 400;
+            // アンカーの値取得 リンク先（content）を取得して、hrefという変数に代入
+            var href = $(this).attr("content");
+            // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
+            var position = target.offset().top + adjust;
+            // スムーススクロール linear（等速） or swing（変速）
+            $('body,html').animate({
+                scrollTop: position
+            }, speed, 'swing');
         }
     </script>
 
