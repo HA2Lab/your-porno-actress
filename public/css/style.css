@@ -453,6 +453,15 @@ body {
     font-family: "Noto Sans JP";
 }
 
+.sample-movie-text {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+    font-family: "Noto Sans JP";
+    font-size: 1.0rem;
+    color: hotpink;
+}
+
 .share-buttons {
     margin-top: 15px;
     width: 50%;
