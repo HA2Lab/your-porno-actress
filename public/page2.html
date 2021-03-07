@@ -13,36 +13,53 @@
                 console.log("result start")
                 if (data1["result"]["items"].length > 0) {
                     console.log(data1["result"]["items"][0]["sampleMovieURL"]["size_720_480"]);
+
+                    var apiWrapId = movieAreaId + "-wrap-0";
+                    // fanza api wrapper
+                    $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                    // sample title
+                    $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][0]["title"] + '</div>').appendTo(apiWrapId);
                     // sample image
-                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][0]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(movieAreaId);
+                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][0]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
                     // sample movie
-                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][0]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][0]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
                     // sample movie link
-                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][0]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(movieAreaId);
-                    $('<br/>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][0]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
                 }
 
                 if (data1["result"]["items"].length > 1) {
                     console.log(data1["result"]["items"][1]["sampleMovieURL"]["size_720_480"]);
+
+                    var apiWrapId = movieAreaId + "-wrap-1";
+                    // fanza api wrapper
+                    $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                    // sample title
+                    $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][1]["title"] + '</div>').appendTo(apiWrapId);
                     // sample image
-                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][1]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(movieAreaId);
+                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][1]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
                     // sample movie
-                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][1]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][1]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
                     // sample movie link
-                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][1]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(movieAreaId);
-                    $('<br/>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][1]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
                 }
 
                 if (data1["result"]["items"].length > 2) {
                     console.log(data1["result"]["items"][2]["sampleMovieURL"]["size_720_480"]);
+
+                    var apiWrapId = movieAreaId + "-wrap-2";
+                    // fanza api wrapper
+                    $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                    // sample title
+                    $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][2]["title"] + '</div>').appendTo(apiWrapId);
                     // sample image
-                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][2]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(movieAreaId);
+                    $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][2]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
                     // sample movie
-                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][2]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][2]["sampleMovieURL"]["size_720_480"] + ' frameborder="0" scrolling="no" allowfullscreen width="720" height="480">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
                     // sample movie link
-                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][2]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(movieAreaId);
-                    $('<br/>').appendTo(movieAreaId);
+                    $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][2]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
                 }
+
+
                 console.log("result end")
             })
             .fail(function(jqXHR, textStatus, errorThrown) {
