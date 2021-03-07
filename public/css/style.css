@@ -455,8 +455,8 @@ body {
 
 .sample-movie-text {
     width: 100%;
-    padding-left: auto;
-    padding-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     font-family: "Noto Sans JP";
     font-size: 1.0rem;
     color: hotpink;
