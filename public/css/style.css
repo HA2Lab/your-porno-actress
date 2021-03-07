@@ -385,13 +385,20 @@ body {
     font-size: 1.1rem;
 }
 
+.sample-movie-wrapper {
+    width: 95%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .iframe-wrapper {
     position: relative;
     width: 100%;
     padding-top: 56.25%;
     /* depend on aspect ratio*/
-    margin-top: 10px;
-    margin-bottom: 10px;
     margin-right: auto;
     margin-left: auto;
 }
