@@ -372,12 +372,12 @@ body {
 .sample-image-wrapper {
     width: 95%;
     height: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .sample-image {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 100%;
 }
 
 .result-matchig-point-text {
