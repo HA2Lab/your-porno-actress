@@ -453,10 +453,12 @@ body {
     font-family: "Noto Sans JP";
 }
 
-.sample-movie-text {
+.sample-movie-link {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+}
+
+.sample-movie-text {
     font-family: "Noto Sans JP";
     font-size: 1.0rem;
     color: hotpink;
