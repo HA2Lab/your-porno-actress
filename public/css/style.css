@@ -369,6 +369,19 @@ body {
     line-height: 1.3em;
 }
 
+.sample-title-wrapper {
+    width: 95%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sample-title {
+    font-family: "Noto Sans JP";
+    font-size: 1.0rem;
+    color: darkslategray;
+}
+
 .sample-image-wrapper {
     width: 95%;
     height: auto;
@@ -410,6 +423,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.sample-movie-link {
+    width: 100%;
+    text-align: center;
+}
+
+.sample-movie-text {
+    font-family: "Noto Sans JP";
+    font-size: 1.0rem;
+    color: hotpink;
 }
 
 .no-actress-message {
@@ -471,17 +495,6 @@ body {
     color: gray;
     font-size: 1.0rem;
     font-family: "Noto Sans JP";
-}
-
-.sample-movie-link {
-    width: 100%;
-    text-align: center;
-}
-
-.sample-movie-text {
-    font-family: "Noto Sans JP";
-    font-size: 1.0rem;
-    color: hotpink;
 }
 
 .share-buttons {
