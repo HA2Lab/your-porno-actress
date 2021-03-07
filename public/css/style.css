@@ -369,6 +369,11 @@ body {
     line-height: 1.3em;
 }
 
+.api-wrapper {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
 .sample-title-wrapper {
     width: 95%;
     height: auto;
