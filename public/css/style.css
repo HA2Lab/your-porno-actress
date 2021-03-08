@@ -417,7 +417,7 @@ body {
     width: 100%;
     /* padding-top: 56.25%; */
     /* size_476_306 */
-    padding: calc(306 / 476 * 100%) 0 0;
+    padding: calc(480 / 720 * 100%) 0 0;
     /* depend on aspect ratio*/
     margin-right: auto;
     margin-left: auto;
