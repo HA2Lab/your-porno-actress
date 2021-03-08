@@ -413,21 +413,23 @@ body {
 }
 
 .iframe-wrapper {
-    /* position: relative;
+    position: relative;
     width: 100%;
-    padding-top: 56.25%; */
+    /* padding-top: 56.25%; */
+    /* size_476_306 */
+    padding: calc(306 / 476 * 100%) 0 0;
     /* depend on aspect ratio*/
-    /* margin-right: auto;
-    margin-left: auto; */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .iframe-setting {
     /* iframe doesn't support auto */
-    /* position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; */
+    height: 100%;
 }
 
 .sample-movie-link {
