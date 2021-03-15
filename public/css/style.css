@@ -66,7 +66,7 @@ img {
 
 .page-explanation {
     margin-top: 5%;
-    font-size: calc(0.2rem + ((1vw - 0.03rem) * 1.8));
+    font-size: calc(0.2rem + ((1vw - 0.03rem) * 1.9));
 }
 
 .gnav {
@@ -105,13 +105,21 @@ img {
 }
 
 .control-label {
-    font-size: calc(1.0rem + ((5vw) * 0.2));
+    font-size: calc(1.0rem + ((4vw) * 0.2));
     margin: 1%;
+    color: gray;
 }
 
 .form-control {
     margin: 2%;
-    font-size: calc(1.0rem + ((5vw) * 0.2));
+    font-size: calc(1.0rem + ((4vw) * 0.2));
+    width: 60%;
+    color: gray;
+    border: 2px gray solid;
+    border-radius: 3%;
+    /* border: 2px hotpink solid;
+    padding-left: auto;
+    padding-right: auto; */
 }
 
 .preview-container {
@@ -191,7 +199,7 @@ img {
     margin: 1%;
     padding: 0.3em 1em;
     font-family: "Noto Sans JP";
-    font-size: calc(1.0rem + ((5vw) * 0.2));
+    font-size: calc(1.0rem + ((4vw) * 0.2));
     text-decoration: none;
     background: hotpink;
     /*ボタン色*/
@@ -230,7 +238,7 @@ img {
 }
 
 .explanation {
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: center;
     font-size: calc(0.4rem + ((1vw - 0.05rem) * 2.6));
     /* 可変*/
@@ -262,9 +270,17 @@ img {
     line-height: calc(16px + (1vw - 0.15rem)*1.0);
 }
 
+.step {
+    text-align: left;
+    color: hotpink;
+    font-size: calc(1.5rem + ((1vw - 0.15rem) * 1.4));
+    margin-bottom: -10px;
+}
+
 .explanation-text {
-    display: inline;
-    font-size: calc(0.15rem + ((1vw - 0.18rem) * 1.3));
+    /* display: inline; */
+    text-align: left;
+    font-size: calc(0.32rem + ((1vw - 0.22rem) * 1.3));
     /* 可変*/
     font-weight: normal;
 }
@@ -323,7 +339,7 @@ img {
 }
 
 .container {
-    width: 90%;
+    width: 94%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -394,9 +410,11 @@ img {
 }
 
 .sample-title {
-    font-family: "Noto Sans JP";
-    font-size: 1.0rem;
-    color: darkslategray;
+    /* font-family: "Noto Sans JP"; */
+    font-size: calc(1.2rem + ((1.0vw - 0.15rem) * 0.9));
+    color: gray;
+    font-weight: normal;
+    line-height: normal;
 }
 
 .sample-image-wrapper {
@@ -451,7 +469,7 @@ img {
 
 .sample-movie-text {
     font-family: "Noto Sans JP";
-    font-size: 1.0rem;
+    font-size: calc(1.2rem + ((1.0vw - 0.15rem) * 0.9));
     color: hotpink;
 }
 
@@ -582,7 +600,7 @@ footer {
         font-size: calc(0.4rem + ((14vw) * 0.23));
     }
     .page-title h3 {
-        font-size: calc(0.4rem + ((10vw) * 0.23));
+        font-size: calc(0.4rem + ((10vw) * 0.24));
     }
     .form-group {
         display: block;
@@ -593,17 +611,24 @@ footer {
         margin-right: auto;
     }
     .form-control {
-        display: block;
+        /* display: block; */
         margin: 2%;
+        width: 85%;
     }
     .explanation {
-        font-size: calc(0.4rem + ((16vw) * 0.23));
+        /* margin-top: 10%; */
+        font-size: calc(0.4rem + ((16vw) * 0.3));
     }
     .explanation-text {
-        display: inline;
-        font-size: calc(0.11em + ((16vw) * 0.23));
+        /* display: inline; */
+        font-size: calc(0.25em + ((16vw) * 0.22));
         /* 可変*/
         font-weight: normal;
+    }
+    .step {
+        font-size: calc(3rem + ((1vw - 0.17rem) * 1.4));
+        margin-top: -10px;
+        margin-bottom: -20px;
     }
     .circle {
         margin-left: 5%;
@@ -616,7 +641,7 @@ footer {
         font-size: calc(0.3rem + ((15vw) * 0.2));
     }
     .example-text-last {
-        font-size: calc(0.1em + ((15vw) * 0.23));
+        font-size: calc(0.1em + ((16vw) * 0.22));
         /* 可変*/
     }
     /* HOME */
@@ -647,9 +672,9 @@ footer {
         /*it makes change of height of cropper image*/
         /* height: 500px !important; */
     }
-    .container {
+    /* .container {
         width: 100%;
-    }
+    } */
     .result-vertical-container {
         width: 100%;
     }
