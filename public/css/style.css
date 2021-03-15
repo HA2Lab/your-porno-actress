@@ -361,10 +361,12 @@ img {
 }
 
 .result-vertical-container {
+    margin-top: 2%;
     border-top: 2px hotpink solid;
+    padding-top: 3%;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
 }
 
 .result-flex-item-wrapper {
@@ -520,8 +522,7 @@ img {
 
 .score-explanation-title {
     padding-left: 5px;
-    font-size: 1.3rem;
-    font-family: "Noto Sans JP";
+    font-size: calc(0.2em + ((7vw) * 0.2));
     color: hotpink;
 }
 
@@ -529,8 +530,7 @@ img {
     padding-left: 20px;
     text-align: left;
     color: gray;
-    font-size: 1.0rem;
-    font-family: "Noto Sans JP";
+    font-size: calc(0.2rem + ((7vw) * 0.2));
 }
 
 .share-buttons {
@@ -694,9 +694,11 @@ footer {
     .no-actress-message-list {
         font-size: 1.1rem;
     }
+    .score-explanation-title {
+        font-size: calc(0.1rem + ((16vw) * 0.23));
+    }
     .score-explanation {
         font-size: calc(0.1rem + ((16vw) * 0.23));
-        ;
     }
     .share-buttons {
         width: 80%;
