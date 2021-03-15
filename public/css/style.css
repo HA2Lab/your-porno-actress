@@ -115,11 +115,9 @@ img {
     font-size: calc(1.0rem + ((4vw) * 0.2));
     width: 60%;
     color: gray;
+    /* background-color: gray; */
     border: 2px gray solid;
-    border-radius: 3%;
-    /* border: 2px hotpink solid;
-    padding-left: auto;
-    padding-right: auto; */
+    border-radius: 5px;
 }
 
 .preview-container {
@@ -180,6 +178,7 @@ img {
 
 .after-trimming-text {
     display: block;
+    color: gray;
     margin-top: 10px;
     font-size: calc(1.0rem + ((5vw) * 0.2));
     margin-left: auto;
@@ -291,7 +290,7 @@ img {
 }
 
 .example-usage {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .example-text {
@@ -535,7 +534,8 @@ img {
 }
 
 .share-buttons {
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 50%;
     margin-right: auto;
     margin-left: auto;
