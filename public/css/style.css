@@ -116,7 +116,7 @@ img {
     width: 60%;
     color: gray;
     /* background-color: gray; */
-    border: 2px gray solid;
+    border: 3px gray solid;
     border-radius: 5px;
 }
 
@@ -614,6 +614,8 @@ footer {
         /* display: block; */
         margin: 2%;
         width: 85%;
+        border: 2px gray solid;
+        border-radius: 5px;
     }
     .explanation {
         /* margin-top: 10%; */
