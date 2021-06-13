@@ -2,7 +2,7 @@
     function loadMovie(name, movieAreaId) {
         console.log(name)
             // 送信先のURL
-        const url = "https://api.dmm.com/affiliate/v3/ItemList?api_id=6pxdPBPJUr1YsrFcv2aw&affiliate_id=ha2lab-990&site=FANZA&service=digital&floor=videoa&hits=10&sort=rank&output=json&hits=3&keyword=" + encodeURI(name);
+        const url = "https://api.dmm.com/affiliate/v3/ItemList?api_id=6pxdPBPJUr1YsrFcv2aw&affiliate_id=ha2lab-990&site=FANZA&service=digital&floor=videoa&hits=10&sort=date&output=json&hits=3&keyword=" + encodeURI(name);
 
         // 1. $.getで通信を行う。"json"はサーバから返されるデータの種類。
         $.get(url, null, null, "json")
