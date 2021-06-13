@@ -1,0 +1,186 @@
+﻿<head>
+    <!-- Viewpoint setting for responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- CDN -->
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- cropper css load -->
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- jQuery load -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
+    <!-- cropper load -->
+</head>
+
+<body>
+    <!-- button -->
+    <div class="btn-area">
+        <input type="button" value="調べる" id="exe-btn" class="btn-square reload-btn" onclick="myFunction()">
+    </div>
+
+
+    <!-- result shows -->
+    <div class="result-container">
+
+        <!-- result item wrapper -->
+        <div class="result-vertical-container">
+
+            <div class="result-flex-item-wrapper">
+
+                <!-- result jav actress image -->
+                <div class="result-flex-item">
+                    <img class="result-flex-item-image" src="/actress/$elem.Face.ExternalImageId$jpeg" alt="here is result jav image">
+                </div>
+
+                <!-- result details -->
+                <div class="result-flex-item">
+                    <p class="result-matchig-point-text">似ているAV女優</p>
+                    <p class="result-actress-text" id="result-actress-text-$velocityCount">$elem.Name</p>
+                    <p class="result-matchig-point-text">マッチ度: $elem.Similarity %</p>
+                </div>
+
+                <div id="movie-area">
+                    movie area
+                </div>
+
+                <!-- embetting movie frame -->
+                <!-- <div class="result-flex-item">
+                #if($elem.TagUrlElement!="")
+                <div class="iframe-wrapper">
+                    <iframe class="iframe-setting" src="https://www.pornhub.com/embed/$elem.TagUrlElement" frameborder="0" 　scrolling="no" allowfullscreen></iframe>
+                </div>
+                #end
+            </div> -->
+
+            </div>
+            <!-- end result-flex-item-wrapper-->
+        </div>
+        <!-- end result-vertical-container -->
+
+        <!-- result item wrapper -->
+        <div class="result-vertical-container">
+            <div class="result-flex-item-wrapper">
+                <div id="movie-area2">
+                    movie area2
+                </div>
+            </div>
+        </div>
+        <!-- end result-vertical-container -->
+        <div class="result-vertical-container">
+            <div class="result-flex-item-wrapper">
+                <div id="movie-area3">
+                    movie area3
+                </div>
+            </div>
+        </div>
+        <!-- end result-vertical-container -->
+    </div>
+
+    <!-- score details -->
+    <div class="score-detail">
+        <div class="score-table">
+            <h3 class="score-explanation-title">
+                マッチ度
+            </h3>
+
+            <p class="score-explanation">
+                90点以上: もしかして本人かも<br /> 80～89点: AVデビューすすめちゃおう<br /> 70～79点: 1回整形したらAV女優になれるかも<br /> 70点以下: 来世に期待
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        function loadMovie(name, movieAreaId, movieSize) {
+            console.log("name: ")
+            console.log(name)
+            console.log("movieAreaId: ")
+            console.log(movieAreaId)
+            console.log("movieSize: ")
+            console.log(movieSize)
+                // 送信先のURL
+            const url = "https://api.dmm.com/affiliate/v3/ItemList?api_id=6pxdPBPJUr1YsrFcv2aw&affiliate_id=ha2lab-990&site=FANZA&service=digital&floor=videoa&hits=10&sort=date&output=json&hits=3&keyword=" + encodeURI(name);
+
+            // 1. $.getで通信を行う。"json"はサーバから返されるデータの種類。
+            $.get(url, null, null, "json")
+                // 2. doneは、通信に成功した時に実行される
+                //  引数のdata1は、通信で取得したデータ
+                .done(function(data1, textStatus, jqXHR) {
+                    // 3. キーを指定して値を表示
+                    console.log("result start")
+                    console.log(data1)
+
+                    if (data1["result"]["items"].length > 0) {
+                        console.log(data1["result"]["items"][0]["sampleMovieURL"][movieSize]);
+
+                        var apiWrapId = movieAreaId + "-wrap-0";
+                        // fanza api wrapper
+                        $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                        // sample title
+                        $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][0]["title"] + '</div>').appendTo(apiWrapId);
+                        // sample image
+                        $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][0]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
+                        // sample movie
+                        $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][0]["sampleMovieURL"][movieSize] + ' frameborder="0" scrolling="no" max-width=100% controls=1 playsinline=1 webkit-playsinline="webkit-playsinline">iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
+                        // sample movie link
+                        $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][0]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
+                    }
+
+                    if (data1["result"]["items"].length > 1) {
+                        console.log(data1["result"]["items"][1]["sampleMovieURL"]["size_720_480"]);
+
+                        var apiWrapId = movieAreaId + "-wrap-1";
+                        // fanza api wrapper
+                        $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                        // sample title
+                        $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][1]["title"] + '</div>').appendTo(apiWrapId);
+                        // sample image
+                        $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][1]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
+                        // sample movie
+                        $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][1]["sampleMovieURL"][movieSize] + ' frameborder="0" scrolling="no" allowfullscreen controls=1 playsinline=1>iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
+                        // sample movie link
+                        $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][1]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
+                    }
+
+                    if (data1["result"]["items"].length > 2) {
+                        console.log(data1["result"]["items"][2]["sampleMovieURL"]["size_720_480"]);
+
+                        var apiWrapId = movieAreaId + "-wrap-2";
+                        // fanza api wrapper
+                        $('<div id="' + apiWrapId.slice(1) + '"class="api-wrapper"><div/>').appendTo(movieAreaId);
+                        // sample title
+                        $('<div class="sample-title-wrapper"><h3 class="sample-title">' + data1["result"]["items"][2]["title"] + '</div>').appendTo(apiWrapId);
+                        // sample image
+                        $('<div class="sample-image-wrapper"><img src="' + data1["result"]["items"][2]["imageURL"]["large"] + '" class="sample-image" alt="Fanza sample image"></div>').appendTo(apiWrapId);
+                        // sample movie
+                        $('<div class="sample-movie-wrapper"><div class="iframe-wrapper"><iframe class="iframe-setting" src=' + data1["result"]["items"][2]["sampleMovieURL"][movieSize] + ' frameborder="0" scrolling="no" allowfullscreen controls=1 playsinline=1>iframeに対応したブラウザでご覧ください。</iframe></div></div>').appendTo(apiWrapId);
+                        // sample movie link
+                        $('<div class="sample-movie-link"><a href="' + data1["result"]["items"][2]["affiliateURLsp"] + '" target="_blank" rel="noopener noreferrer" class="sample-movie-text">FANZA動画リンク</a></div>').appendTo(apiWrapId);
+                    }
+
+                    console.log("result end")
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("done");
+                });
+        }
+
+        // <!-- for fanza api -->
+        function myFunction() {
+            console.log("run here");
+            $("#movie-area").load(loadMovie("永井智美", "#movie-area", "size_476_306"), loadMovie("永井智美", "#movie-area2", "size_476_306"), loadMovie("永井智美", "#movie-area3", "size_476_306"));
+        };
+    </script>
+
+
+</body>
